@@ -13,18 +13,24 @@
     </div>
     <div>
         <p>Akapit</p>
-        <em>To jest wyróżniony tekst</em><br>
-        <strong>To jest pogróbiony tekst</strong><br>
+        <em>wyróżniony tekst</em><br>
+        <strong>pogróbiony tekst</strong><br>
         <em>Stąd się ucze o django --></em>
         <a href="https://strefakursow.pl">LINK</a>
     </div>
     <div>
-        <ul>
-        <li>Elementy listy</li>
-        <li>Elementy listy</li>
-        <li>Elementy listy</li>
-        <li>Elementy listy</li>
-        </ul>
+
+        {% comment "Komentarz autora" %}
+        Tutaj lista postów
+        {% endcomment %}
+        {% for post in posts %}
+
+    </div>
+        <p>opublikowany: {{ post.publish_date }}</p>
+        <h2><a href=""> {{ post.title }}</a></h2>
+        <em>{{ post.text | linebreaksbr }}</em>
+    <div>
+    {% endfor %}
     </div>
 </body>
 
